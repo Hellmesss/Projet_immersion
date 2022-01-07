@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
-#include <cstdio> // input / output / SEEK_END
-#include <cstring> // c_str()
-#include <cstdlib> // errno
+#include <cstdio>
+#include <cstring>
+#include <cstdlib>
 #include <vector>
 #include <fstream>
 
