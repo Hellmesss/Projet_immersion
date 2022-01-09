@@ -16,6 +16,19 @@ int main() {
 	FILE* pFile = NULL; // Pointeur donc on initialise à NULL
 	errno_t err;
 
+	string const matriceHomography("C:/Users/gdemo/Documents/Projet_TUT/Projet_immersion/matrice.txt"); //creer le fichier txt
+	ofstream monFlux(matriceHomography.c_str());
+
+	//pour modifier le txt
+	if (monFlux)
+	{
+		//inserer la matrice homographique ici
+	}
+	else
+	{
+		cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
+	}
+
 	// Ouverture du fichier
 	do {
 		cout << "Entrer le nom de l'image(acapulcoA11.bmp): ";
@@ -60,19 +73,6 @@ int main() {
 
 	dataImg.erase(dataImg.begin(), dataImg.begin() + offset); // application de l'offset ex: Si offset = 2 on supprime les 2 premières valeurs de dataImg
 
-
-	/* Regroupe les bits en octet.
-	*
-	* /!\ Dans dataImg, true représente [0,0,0,0,0,0,0,1] et false [0,0,0,0,0,0,0,0]
-	* donc on prend les 8 premières valeurs de dataImg et on les "regroupe".
-	*
-	* Exemple:
-	* 8 valeur de dataImg => [0,0,0,0,0,0,0,1] [0,0,0,0,0,0,0,0] [0,0,0,0,0,0,0,0] [0,0,0,0,0,0,0,1]
-	*                        [0,0,0,0,0,0,0,1] [0,0,0,0,0,0,0,1] [0,0,0,0,0,0,0,1] [0,0,0,0,0,0,0,0]
-	*
-	* On cherchera donc a avoir => = [1,0,0,1,1,1,1,0]
-	* On fais donc un ET logique.
-	* */
 
 	// ET logique
 	vector<unsigned char> listOctet; // vector où seront stocker les octets regroupés
