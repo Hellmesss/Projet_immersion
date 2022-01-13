@@ -1,10 +1,13 @@
+
 import numpy as np
 import matplotlib.pyplot as plt
 from skimage.io import imread, imshow
-from skimage import transform
+from skimage import transform 
 
-image = imread('image.jpg')
-imshow(image)
+
+
+imageTest = isreadable('ImageTestPtut1.png')
+imshow(imageTest)
 
 area_of_interest = [(500, 600),
                     (3220, 1950),
@@ -31,4 +34,4 @@ def project_planes(image, src, dst):
     ax[1].imshow(projection)
     ax[1].plot(x_dst, y_dst, 'r--')
     ax[1].set_title('Area of Projection')
-    project_planes(palawan, area_of_interest, area_of_projection)
+    project_planes(imageTest, area_of_interest, area_of_projection) 
