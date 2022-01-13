@@ -16,7 +16,7 @@ int main() {
 	FILE* pFile = NULL; // Pointeur donc on initialise à NULL
 	errno_t err;
 
-	string const matriceHomography("C:/Users/gdemo/Documents/Projet_TUT/Projet_immersion/matrice.txt"); //creer le fichier txt
+	string const matriceHomography("C:/Users/gdemo/Documents/Projet_TUT/Projet_immersion/Annexes/callibrage.txt"); //creer le fichier txt
 	ofstream monFlux(matriceHomography.c_str());
 
 	//pour modifier le txt
