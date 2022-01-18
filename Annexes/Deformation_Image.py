@@ -4,7 +4,6 @@ from skimage.io import imread, imshow
 from skimage import transform
 
 
-
 palawan = imread('ImageTestPtut1.png')
 imshow(palawan);
 
@@ -12,7 +11,7 @@ imshow(palawan);
 area_of_interestRed = [(0, 0),
                     (424, 0),
                     (424, 600),
-                    (0, 600)]
+                    (0, 600)]S
 area_of_projectionRed = [(0, 50),
                       (424, 150),
                       (424, 400),
