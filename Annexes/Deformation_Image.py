@@ -11,7 +11,7 @@ imshow(palawan);
 
 imgMatrice = asarray(palawan)
 
-print (imgMatrice) #recupere la matrice de l'image
+
 
 
 area_of_interestRed = [(0, 0),
@@ -153,6 +153,21 @@ def transformation_point (Xi,Yi,Zi, dm, f):
     Phi = np.arctan(Yi/Xi)
     Teta = np.arccos(Zi/Rho)
     
+    
+def callibrage ():
+    
+    i = 0
+    j = 0
+    k = 0
+    callibrateMatrice = imgMatrice
+    
+    for i in imgMatrice:
+        for j in imgMatrice:
+            for k in imgMatrice:
+                callibrateMatrice[i][j][k]
+                #appliquer la deformation
+                
+    return callibrateMatrice
     
 
     
