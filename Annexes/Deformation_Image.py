@@ -1,17 +1,23 @@
 import numpy as np
+from numpy import asarray
 import matplotlib.pyplot as plt
 from skimage.io import imread, imshow
 from skimage import transform
+import math
 
 
 palawan = imread('ImageTestPtut1.png')
 imshow(palawan);
 
+imgMatrice = asarray(palawan)
+
+print (imgMatrice) #recupere la matrice de l'image
+
 
 area_of_interestRed = [(0, 0),
                     (424, 0),
                     (424, 600),
-                    (0, 600)]S
+                    (0, 600)]
 area_of_projectionRed = [(0, 50),
                       (424, 150),
                       (424, 400),
@@ -127,16 +133,28 @@ def project_transform(image, src, dst):
     tform = transform.estimate_transform('projective', 
                                          np.array(src), 
                                          np.array(dst))
+    
     transformed = transform.warp(image, tform.inverse)
     
     plt.figure(figsize=(6,6))
     plt.imshow(transformed)
     plt.plot(x_dst, y_dst, 'r--')
     
-project_transform(palawan, area_of_interestRed, area_of_projectionBlue)
-#project_transform(palawan, area_of_interestGreen, area_of_projectionGreen)
-#project_transform(palawan, area_of_interestYellow, area_of_projectionYellow)
-#project_transform(palawan, area_of_interestBlue, area_of_projectionBlue)
+#project_transform(palawan, area_of_interestRed,area_of_interestBlue, area_of_projectionRed,area_of_projectionBlue)
+project_transform(palawan, area_of_interestGreen, area_of_projectionGreen)
+project_transform(palawan, area_of_interestYellow, area_of_projectionYellow)
+
+
+def transformation_point (Xi,Yi,Zi, dm, f):
+    
+    f = 132 #premiere valeure brut trouvee / disantce focal miroir
+    
+    Rho = math.sqrt((Xi^2)+(Yi^2)+(Zi^2))
+    Phi = np.arctan(Yi/Xi)
+    Teta = np.arccos(Zi/Rho)
+    
+    
+
     
 
     
