@@ -156,16 +156,30 @@ def transformation_point (Xi,Yi,Zi, dm, f):
     
 def callibrage ():
     
-    i = 0
-    j = 0
-    k = 0
-    callibrateMatrice = imgMatrice
+    Mi(xi,yi,zi) : xi/x1 = f/dm <=> x1 = (xidm)/f y1 = (yidm)/f
+
+    M1 =(x1,y1, dO+dm)
+    O'M1=(x1,y1,-dm)
+    O'M2= Delta O'M1 = Alpha ((x1,y1,-dm))
+    CM2 = CO' + O'M2 = (Delta (xi * dm))/f, Delta (yi * dm))/f, dO+2dm-Deltadm)
     
-    for i in imgMatrice:
-        for j in imgMatrice:
-            for k in imgMatrice:
-                callibrateMatrice[i][j][k]
-                #appliquer la deformation
+    Alpha = Delta
+    a = dm²(1+ xi²+yi²/f²)
+    b= -2dm(dO+2dm)
+    c= (dO+ 2dm)²-R²
+    
+    Alpha 1 = -b + sqrt(b²-4ac)/2a
+    
+    Zm2 > R-h
+    
+    N = 1/rCM2
+    V1 = M2M1/Norme(M2M1), V2= 2(NV1)N-V1 (R cours ASI)
+    CM= CM2+M2M = CM2+ T*V2
+    
+    MplanX = -dxmax/2 -> t 
+    
+    Yt et Zt : Pz <= Zt<=Pz+dzMax
+    -dymax/2 <=yt<=dymax/2
                 
     return callibrateMatrice
     
